@@ -1,0 +1,16 @@
+class VarExam 
+{
+	public static void main(String[] args) 
+	{
+		// 이름, 학번 , 내부평가점수 , 외부평가점수 , 최종점수 , 합격여부
+		String name;
+		String hakBun;
+		hakBun = "22020253";
+		int inScore;
+		int outScore;
+		double totalScore;
+		String result;
+
+		//
+	}
+}

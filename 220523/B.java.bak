@@ -1,0 +1,9 @@
+class B 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello Java!");
+		System.out.println("asdqwe");
+		System.out.println("123123123zxczxc1");
+	}
+}

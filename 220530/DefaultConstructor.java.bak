@@ -1,0 +1,24 @@
+class SupExam{
+	private int a;
+	SupExam() {
+		System.out.println("何葛 积己磊");
+		a = 50;
+	}
+
+	int getA() {
+		return a;
+	}
+}
+
+class SubExam extends SupExam {
+	SubExam(){
+		System.out.println("磊侥 积己磊");
+	}
+}
+
+public class DefaultConstructor {
+	public static void main(String[] args) {
+		SubExam x = new SubExam();
+		System.out.println("x.getA() = " + x.getA());
+	}
+}

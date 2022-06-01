@@ -1,0 +1,16 @@
+class MethodStudy3 {
+	
+	void me(){
+		System.out.println("me()");
+	}
+
+	void me(int a){
+		System.out.println("me(int a)");
+	}
+
+	public static void main(String[] args) {
+		MethodStudy3 ob = new MethodStudy3();
+		ob.me();
+		ob.me(123);
+	}
+}

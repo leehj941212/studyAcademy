@@ -1,0 +1,109 @@
+/*
+5명의 학생의 성적을 처리하는 클래스를 생성하시오
+학번 , 이름 , java , html , jsp 성적 , 합계 , 평균 데이터를 처리 후
+평균이 높은순으로 결과를 출력하시오
+*/
+
+class StuDataTool{
+	int stuNum;
+	String stuName;
+	int javaScore;
+	int htmlScore;
+	int jspScore;
+	int scoreSum = javaScore + htmlScore + jspScore;
+	int scoreAve = scoreSum / 3;
+
+	}
+
+class StuData {
+	StuDataTool[] stuData = new StuDataTool[5];	
+
+	void stuArray(){
+
+	for (int i = 0; i < stuData.length ; i++){
+		stuData[i] = new StuDataTool();
+	}
+
+	stuData[0].stuNum = 220101;
+	stuData[0].stuName = "철수";
+	stuData[0].javaScore = 1;
+	stuData[0].htmlScore = 2;
+	stuData[0].jspScore = 3;
+
+	stuData[1].stuNum = 220102;
+	stuData[1].stuName = "영희";
+	stuData[1].javaScore = 4;
+	stuData[1].htmlScore = 5;
+	stuData[1].jspScore = 6;
+
+	stuData[2].stuNum = 220103;
+	stuData[2].stuName = "바둑";
+	stuData[2].javaScore = 7;
+	stuData[2].htmlScore = 8;
+	stuData[2].jspScore = 9;
+
+	stuData[3].stuNum = 220104;
+	stuData[3].stuName = "길동";
+	stuData[3].javaScore = 10;
+	stuData[3].htmlScore = 9;
+	stuData[3].jspScore = 8;
+
+	stuData[4].stuNum = 220105;
+	stuData[4].stuName = "민수";
+	stuData[4].javaScore = 7;
+	stuData[4].htmlScore = 6;
+	stuData[4].jspScore = 5;
+
+    int su1 ;
+	int[] sortScoreAve = new int[5];
+		for (int i = 0; i < 5 ; i++){
+			for (int j = 1; j < 5 ; j++){
+				if (sortScoreAve[i] < sortScoreAve[j]){
+					su1 =sortScoreAve[i];
+					sortScoreAve[i] = sortScoreAve[j];
+					sortScoreAve[j] = su1;
+				}
+			}
+		}
+
+		int[] sortScoreAveName = new int[5];
+		for (int i = 0; i < 5 ; i++){
+			for (int j = 1; j < 5 ; j++){
+				if (sortScoreAveName[i] < sortScoreAveName[j]){
+					su1 =sortScoreAveName[i];
+					sortScoreAveName[i] = sortScoreAveName[j];
+					sortScoreAveName[j] = su1;
+				}
+			}
+		}
+ }
+}
+
+public class Q5{
+	public static void main(String[] args) {
+		StuData stuData = new StuData();
+
+		for (int i = 0 ;i < 5 ; i++){
+			System.out.println(StuData.stuArray().stuData[i].scoreSum);
+		}
+/*
+		for (int i = 0 ;i < 5 ; i++){
+			System.out.println(scoreSort.scoreAve(i));
+		}
+
+		for (int i = 0 ;i < 5 ; i++){
+			System.out.println(scoreSort.sortScoreAve(i));
+		}
+
+		for (int i = 0 ;i < 5 ; i++){
+			System.out.println(scoreSort.sortScoreAveName(i));
+		}
+*/
+
+		System.out.println("평균이 높은 순은");
+
+		//for (int i = 0 ; i < 5 ; i++){
+		//	System.out.print(scoreSort.sortScoreAveName(i) + " " + scoreSort.sortScoreAve(i));
+		//}
+	}
+}

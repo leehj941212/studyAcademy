@@ -1,0 +1,28 @@
+class High{
+	int x = 1000;
+	void display(){
+		System.out.println("== High 클래스의 display() 메소드 ==");
+		System.out.println("  High 클래스의 x 값: " + x);
+	}
+}
+
+class Lower extends High{
+	int x = 2000;
+	void display() {
+		System.out.println("== Lower 클래스의 display() 메소드 ==");
+		System.out.println("  Lower 클래스의 x 값: " + x);
+	}
+	void write(){
+		this.display();
+		super.display();
+	}
+}
+
+class Jv {
+	public static void main(String[] args) {
+		System.out.println("*** this 및 super 예약어 ***");
+
+		Lower obj = new Lower();
+		obj.write() ;
+	}
+}
