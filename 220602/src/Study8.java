@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 //사이즈가 6 ArrayList 선언
 //1~45 사이의 랜덤값 저장 -> 중복되지 않아야함.
-//출력
+//정렬해서 출력
 
 public class Study8 {
 
@@ -12,7 +13,7 @@ public class Study8 {
 		
 		//사이즈가 45 ArrayList2 선언 (45 선언은 의미없음)
 		ArrayList<Integer> arrayList2 = new ArrayList<Integer>(45);
-		//ArrayList2 의 i번째는 i라는 값을 가진다
+		//ArrayList2 의 i번째는 i+1라는 값을 가진다
 		for (int i = 1; i < 46; i++) {
 			arrayList2.add(i);
 		}
@@ -27,7 +28,13 @@ public class Study8 {
 
 		}
 		
-		System.out.println(arrayList);
+		//작은순으로 정렬
+		Collections.sort(arrayList);
+		
+		//System.out.println(arrayList);
+		for (Integer i : arrayList) {
+			System.out.println(i);
+		}
 	}
 
 }
