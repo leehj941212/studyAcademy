@@ -30,6 +30,8 @@ public class ArrayListStudy3 {
 		Collections.sort(list2);
 		print(list1,list2);
 		
+		//System.out.println(list2.get("4") );
+		
 		//list2 의 모든 값을 list1 이 가지면 true 를 리턴한다
 		System.out.println("list1.containsAll(list2)" 
 		+ list1.containsAll(list2));
