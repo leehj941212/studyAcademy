@@ -4,21 +4,21 @@ import java.util.Hashtable;
 public class HashTableExam {
 	Hashtable<String,UserInfo> table = new Hashtable<String,UserInfo>();
 	
-	public HashSetExam() {
+	public HashTableExam() {
 		UserInfo u = new UserInfo();
 		u.setName("³ª");
 		u.setAge(20);
 		u.setAddr("°­³²±¸");
 		
 		UserInfo u2 = new UserInfo();
-		u.setName("È«±æµ¿");
-		u.setAge(25);
-		u.setAddr("¿ª»ïµ¿");
+		u2.setName("È«±æµ¿");
+		u2.setAge(25);
+		u2.setAddr("¿ª»ïµ¿");
 		
 		UserInfo u3 = new UserInfo();
-		u.setName("±èÃ¶¼ö");
-		u.setAge(42);
-		u.setAddr("Ã»´ãµ¿");
+		u3.setName("±èÃ¶¼ö");
+		u3.setAge(42);
+		u3.setAddr("Ã»´ãµ¿");
 		
 		table.put("na" , u);
 		table.put("hong" , u2);
@@ -29,7 +29,7 @@ public class HashTableExam {
 			String key = e.nextElement();
 			UserInfo value = table.get(key);
 			System.out.println(key + " = " + value);
-			System.out.println("%s,%d,%s%n" , value.getName(),
+			System.out.printf("%s , %d , %s%n" , value.getName(),
 					value.getAge(), value.getAddr());
 			
 		}
