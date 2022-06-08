@@ -10,9 +10,9 @@ public class HashMapExam extends HashMap<String, Integer> {
 		put("a", 10);
 		super.put("b", 20);
 		put("c", 30);
-		
+
 		System.out.println("size = " + super.size());
-		
+
 		//keySet(); <<- key 값을 리턴한다
 		Set<String> s = super.keySet();
 		for (String str : s) {

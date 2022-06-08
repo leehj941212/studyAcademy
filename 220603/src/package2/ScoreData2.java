@@ -1,16 +1,12 @@
 package package2;
-//성적
-//ArrayList 4개 생성
-//각 ArrayList로 이름 , java 점수 , web 점수 , jsp 점수를 각각 저장한다
-
-import java.util.ArrayList;
+//변수명 선언, getter , setter 
 
 class ScoreData2 {
 	private String name;
 	private int java;
 	private int web;
 	private int jsp;
-	
+
 	public String getName() {
 		return name;
 	}
@@ -35,5 +31,5 @@ class ScoreData2 {
 	public void setJsp(int jsp) {
 		this.jsp = jsp;
 	}
-	
+
 }
