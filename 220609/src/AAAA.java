@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 class BBBB{
-	protected ArrayList<Integer> list = new ArrayList<Integer>();
+	ArrayList<Integer> list = new ArrayList<Integer>();
 
 	public ArrayList<Integer> getList() {
 		return list;
@@ -28,7 +28,9 @@ public class AAAA {
 	public static void main(String[] args) {
 		AAAA aaaa= new AAAA();	
 		aaaa.abc();
-		aaaa.zxc();
+		System.out.println(aaaa.bbbb.getList());
+		
+//		aaaa.zxc();
 	}
 
 }
