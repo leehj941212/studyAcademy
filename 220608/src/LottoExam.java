@@ -1,8 +1,9 @@
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +14,7 @@ import javax.swing.JTextField;
 //작은 순으로 textField 에 출력 ( ex. [1] [2] [3] [4] [5] [6] )
 //상단 2 * 3 버튼의 숫자가 출력된 숫자로 변경된다
 
-public class LottoExam implements MouseListener {
+public class LottoExam implements ActionListener {
 	JFrame frame = new JFrame();
 	JTextField textField = new JTextField();
 	JPanel panel = new JPanel();
@@ -26,11 +27,10 @@ public class LottoExam implements MouseListener {
 		buttons.add(new JButton("숫자생성"));
 		panel2.add(buttons.get(0) ,"East");
 		panel2.add(textField , "Center");
-		
+
 		panel.setLayout(new GridLayout(2 , 3));
 		for (int i = 1; i < 7; i++) {
-			String j = "[" + i + "]";
-			buttons.add(new JButton(j));
+			buttons.add(new JButton(Integer.toString(i)));	
 			panel.add(buttons.get(i));
 		}
 
@@ -47,42 +47,38 @@ public class LottoExam implements MouseListener {
 		frame.setSize(500, 300);
 		//종료버튼을 만든다
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-		
-		frame.addMouseListener(this);
-	}
 
-	
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		//if (e.getSource() == buttons.get(0)) {
-			textField.setText("asdf");
-		//}
-		
+		buttons.get(0).addActionListener(this);
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		textField.setText("asdf");
-	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == buttons.get(0) ) {
+			ArrayList<Integer> lottoNumAll = new ArrayList<Integer>();
+			ArrayList<Integer> lottoNum = new ArrayList<Integer>();
+			for (int i = 1; i < 46; i++) {
+				lottoNumAll.add(i);
+			}
+			for (int i = 0; i < 6; i++) {
+				int x = (int)(Math.random()*lottoNumAll.size());
+				lottoNum.add(lottoNumAll.get(x));
+				lottoNumAll.remove(x);
+			}
+			Collections.sort(lottoNum);
+			
+			textField.setText(
+					"["+lottoNum.get(0)+"] "
+							+"["+lottoNum.get(1)+"] "
+							+"["+lottoNum.get(2)+"] "
+							+"["+lottoNum.get(3)+"] "
+							+"["+lottoNum.get(4)+"] "
+							+"["+lottoNum.get(5)+"] ");
 
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		textField.setText("asdf");
-	}
+			for (int i = 1; i < 7; i++) {
+				buttons.get(i).setText(lottoNum.get(i-1).toString());
+			}
+		}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		textField.setText("asdf");
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 	}
 
 	public static void main(String[] args) {
