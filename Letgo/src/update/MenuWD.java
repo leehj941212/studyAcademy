@@ -1,30 +1,48 @@
 package update;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class MenuWD extends JFrame implements ActionListener {
-
+ 
+	JLabel jl = new JLabel ("¸Þ´º");
 	JButton jb1 = new JButton ("È¸¿øÁ¤º¸ ¼öÁ¤");
 	JButton jb2 = new JButton ("¼ºÀû °ü¸®");
 	JButton jb3 = new JButton ("È¸¿ø Å»Åð");
+	String z;
 		
-	public MenuWD() {
+	public MenuWD(String x) {
 		
 		super("¼±ÅÃ ¸Þ´º");
+		this.z = x;
 		
-		setLayout(new GridLayout(3,1,30,30));
+		setLayout(new GridLayout(4,1,30,30));
 		
+		add(jl);
 		add(jb1);
 		add(jb2);
 		add(jb3);
 		
-		setSize(500,400);
+		jl.setHorizontalAlignment(JLabel.CENTER);
+		
+		Font letter = new Font("¸¼Àº °íµñ",Font.BOLD, 15); 
+		
+		jl.setFont(new Font("¸¼Àº °íµñ",Font.BOLD, 20));
+		
+		jb1.setFont(letter);
+		jb2.setFont(letter);
+		jb3.setFont(letter);
+		
+		setSize(400,400);
 		setVisible(true);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 		jb1.addActionListener(this);
@@ -35,20 +53,18 @@ public class MenuWD extends JFrame implements ActionListener {
 
 public void actionPerformed(ActionEvent e) {
 	   if(e.getSource()==jb1)
-	   {   new FixWD();
+	   {   new FixWD(z);
 		   setVisible(false);
 	   }else if (e.getSource()==jb2)
-	   {   new ScoreMWD();
+	   {   new ScoreMWD(z);
 	   setVisible(false);
 	   }else if (e.getSource()==jb3)
-	   {   new LoginWD();
+	   {   new DeleteWD(z);
 	   setVisible(false);
 	   }
 		
 	} 
 
-public static void main(String[] args) {
-    new MenuWD();
-}
+
 
 }
