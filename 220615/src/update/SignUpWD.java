@@ -34,12 +34,11 @@ class SignUpWD implements ActionListener , KeyListener {
 		arrangement();
 		frame();	
 	}
-
-
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {	
-
+		
+		//회원가입 버튼을 눌렀을때
 		if (e.getSource() == buttons.get("회원가입") ) {
 			if (!new File("member").exists()) {
 				try {
@@ -180,18 +179,13 @@ class SignUpWD implements ActionListener , KeyListener {
 
 			}
 		}
-
-
-
-
+		
+		//취소버튼 눌렀을때
 		if (e.getSource() == buttons.get("취소") ) {
-			//로그인화면
 			new LoginWD();
 			frame.setVisible(false);
 		}
-
-
-
+			
 	}
 
 
@@ -283,28 +277,6 @@ class SignUpWD implements ActionListener , KeyListener {
 		}
 		//비밀번호 체크 전체 끝
 
-		//회원정보 전체 체크 시작
-
-		//		//이름 체크 시작
-		//		if (textFields.get("이름").getText().equals(null)) {
-		//			if (!(comboBoxs.get("성별").getToolTipText().equals("성별"))) {
-		//				labels.get("이름체크").setText("이름을 입력하세요");
-		//			} else {
-		//				labels.get("이름체크").setText("");
-		//			}
-		//		} //이름 체크 끝
-
-		//		//성별 체크 시작
-		//		if ((comboBoxs.get("성별").getSelectedItem()).toString().equals("성별")) {
-		//			if (!textFields.get("휴대폰번호").getText().equals("")) {
-		//				labels.get("성별체크").setText("성별을 입력하세요");
-		//			} else {
-		//				labels.get("성별체크").setText("");					
-		//			}
-		//		} //성별 체크 끝
-
-
-
 		//휴대폰번호 체크 시작
 		if (textFields.get("휴대폰번호").getText().equals("")) {
 			if (!new String(textFields.get("생년").getText()).equals("")) {
@@ -342,23 +314,12 @@ class SignUpWD implements ActionListener , KeyListener {
 					labels.get("생년월일체크").setText("");
 					//생년 체크 끝
 
-					//생월 체크 시작
-					if((comboBoxs.get("생월").getSelectedItem()).toString().equals("월")) {
-						if (!textFields.get("생일").getText().equals("")) {
-							labels.get("생년월일체크").setText("태어난 월를 입력하세요");
-						} else {
-							labels.get("생년월일체크").setText("");
-						}
-					} else {
-						labels.get("생년월일체크").setText("");
-						//생월 체크 끝
-
 						//생일 체크 시작
 						if (textFields.get("생일").getText().equals("")) {
-							if (textFields.get("휴대폰번호").getText().equals(null)) {
-								labels.get("생년월일체크").setText("태어난 일을 입력하세요");
-							} else {
+							if ((comboBoxs.get("생월").getSelectedItem()).toString().equals("월")) {
 								labels.get("생년월일체크").setText("");
+							} else {
+								labels.get("생년월일체크").setText("태어난 월을 입력하세요");
 							}
 						} else {
 							byte[] dayCheckA =textFields.get("생일").getText().getBytes();
@@ -391,6 +352,10 @@ class SignUpWD implements ActionListener , KeyListener {
 											labels.get("생년월일체크").setText("");
 										}
 										break;
+									case "월" :{
+											labels.get("생년월일체크").setText("");
+									}
+										break;
 									}
 								}
 							}
@@ -400,7 +365,7 @@ class SignUpWD implements ActionListener , KeyListener {
 
 				}
 			}
-		}
+//		}
 		//생일 전체 체크 끝
 
 		//학번 체크 시작
