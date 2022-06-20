@@ -10,7 +10,19 @@ public class ScoreAct {
 	ScoreDTO student = new ScoreDTO();
 	Connection connection = null;
 	Statement statement = null;
-	
+
+	void connectMysql() {
+		try {
+			//사용할 클래스에 접근하게 해준다
+			Class.forName("com.mysql.jdbc.Driver");
+			//mysql DB 연결	
+			connection = DriverManager.getConnection("jdbc:mysql://localhost/study3", "root", "1234");
+			statement = connection.createStatement();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 
 	String menuSelect() {
 		System.out.println("메뉴 중 선택하세요");
@@ -22,22 +34,9 @@ public class ScoreAct {
 		return menuNum;
 	}
 
-	void connectMysql() {
-		try {
-			//사용할 클래스에 접근하게 해준다
-			Class.forName("com.mysql.jdbc.Driver");
-			//mysql DB 연결	
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/study3", "root", "1234");
-			statement = connection.createStatement();
-			
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-	}
-	
 	boolean lookUp() {
 		boolean isName = false;
-		
+
 		System.out.println("학생의 이름을 입력하세요");
 		student.setName(sc.nextLine());
 		String sql = "select*from score where name = '"+ student.getName() +"'";		
@@ -56,7 +55,7 @@ public class ScoreAct {
 
 	void create() {
 		boolean isName = lookUp();
-		
+
 		if (!isName) {
 			try {
 				System.out.println("번호를 입력하세요");
@@ -82,16 +81,16 @@ public class ScoreAct {
 				System.out.println(e);
 			}
 		} else {
-			System.out.println("등록 할 수 없습니다");
+			System.out.println("이미 등록된 이름 입니다 초기 화면으로 돌아갑니다");
 		}	
 	}
 
 
 	void update() {
 		boolean isName = lookUp();
-		
+
 		if (!isName) {
-			System.out.println("해당하는 정보가 없습니다");
+			System.out.println("해당하는 정보가 없습니다 초기 화면으로 돌아갑니다");
 		} else {
 			try {
 				System.out.println("번호를 입력하세요");
@@ -123,9 +122,9 @@ public class ScoreAct {
 
 	void delete() {
 		boolean isName = lookUp();
-		
+
 		if (!isName) {		
-			System.out.println("해당하는 정보가 없습니다");
+			System.out.println("해당하는 정보가 없습니다 초기화면으로 돌아갑니다");
 		} else {
 			try {
 				//sql에 입력할 명령문

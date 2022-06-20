@@ -1,11 +1,11 @@
 package study3;
 
 public class ScoreController {
-	ScoreAct scoreAct = new ScoreAct();
-	boolean isWork = true;
+	ScoreAct scoreAct = new ScoreAct();	
 	
 	public ScoreController() {	
 		scoreAct.connectMysql();
+		boolean isWork = true;
 		while (isWork){	
 			String menuNum = scoreAct.menuSelect();
 			switch (menuNum) {

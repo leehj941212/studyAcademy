@@ -30,5 +30,4 @@ class ScoreDTO {
 	public void setScience(int science) {
 		this.science = science;
 	}
-	
 }
