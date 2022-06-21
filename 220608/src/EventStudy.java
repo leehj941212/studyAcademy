@@ -28,7 +28,7 @@ public class EventStudy implements ActionListener {
 		//Frame 사이즈 설정
 		frame.setSize(500, 300);
 		//종료버튼을 만든다
-		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		button0.addActionListener(this);
 		button1.addActionListener(this);
