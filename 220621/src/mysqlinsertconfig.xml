@@ -4,10 +4,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="score">
-<insert id="asd">
-insert into score (name,num,math,science) values ('asd',12,22,33)
+<insert id="asd" parameterType="scoreDTO.StudentDTO">
+insert into score (name,num,math,science) values (#{name},#{num},#{math},#{science})
 </insert>
 <update id="qwe">
 update score set name ='qwe' where name = 'asd'
 </update>
+<select id="zxc" resultType="scoreDTO.StudentDTO">
+select*from score
+</select>
 </mapper>

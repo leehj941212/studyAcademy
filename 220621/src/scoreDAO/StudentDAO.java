@@ -1,6 +1,7 @@
 package scoreDAO;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -36,13 +37,14 @@ public class StudentDAO {
 
 	public void insertConnect(StudentDTO studentDTO) {
 		SqlSession sqlSession =factory.openSession();
-		sqlSession.insert("asd");
+		sqlSession.insert("asd", studentDTO);
 		sqlSession.commit();
 		sqlSession.close();
 	}
 
-	public void readConnect() {
-
+	public void selectConnect() {
+		SqlSession sqlSession =factory.openSession();
+		List <StudentDTO> list = sqlSession.selectList("zxc");
 	}
 
 	public void updateConnect() {

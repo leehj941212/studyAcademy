@@ -29,7 +29,7 @@ public class StudentMain {
 				scoreInterface.executeMysql();
 				break;
 			case "2": case "Á¶È¸":
-				scoreInterface = new DataRead();
+				scoreInterface = new DataSelect();
 				scoreInterface.executeMysql();
 				break;
 				//DataUpdate.executeMysql() -> studentDAO.updateConnect() 
