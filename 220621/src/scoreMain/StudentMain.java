@@ -25,7 +25,7 @@ public class StudentMain {
 			//DataCreate.executeMysql() -> studentDAO.insertConnect() 
 			//-> mysqlconnectconfig.xml -> mysqlinsertconfig.xml 의 insert("") 실행
 			case "1": case "입력":
-				scoreInterface = new DataCreate();
+				scoreInterface = new DataInsert();
 				scoreInterface.executeMysql();
 				break;
 			case "2": case "조회":

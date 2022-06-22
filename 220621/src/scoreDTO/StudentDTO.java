@@ -1,6 +1,6 @@
 package scoreDTO;
 
-class StudentDTO {
+public class StudentDTO {
 	private String name;
 	private int num;
 	private int math;

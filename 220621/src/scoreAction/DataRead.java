@@ -1,10 +1,13 @@
 package scoreAction;
 
+import scoreDAO.StudentDAO;
+
 public class DataRead implements ScoreInterface {
 
 	@Override
 	public void executeMysql() {
-		// TODO Auto-generated method stub
+		StudentDAO studentDAO = StudentDAO.connectMysql();
+		studentDAO.readConnect();
 		
 	}
 
