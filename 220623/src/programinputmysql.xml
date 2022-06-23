@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="teamproject123">
+<insert id="signup" parameterType="programDTO.SourceDTO">
+insert into teamproject (name,callNum,id,password,questions,gender,birth,hakbun,java,web,jsp) 
+values (#{name},#{callNum},#{id},#{password},#{questions},#{gender},#{birth},#{hakbun},#{java},#{web},#{jsp})
+</insert>
+<select id="lookUpById" parameterType="programDTO.SourceDTO" resultType="programDTO.SourceDTO">
+select * from teamproject where id = #{id}
+</select>
+<select id="lookUpByIdPassword" parameterType="programDTO.SourceDTO" resultType="programDTO.SourceDTO">
+select * from teamproject where id = #{id} and password = #{password}
+</select>
+<select id="lookUpByNameQuestions" parameterType="programDTO.SourceDTO" resultType="programDTO.SourceDTO">
+select * from teamproject where name = #{name} and questions = #{questions}
+</select>
+<update id="updatePassword" parameterType="programDTO.SourceDTO">
+update teamproject set password = #{password} where id = #{id}
+</update>
+<update id="updateJavaWebJsp" parameterType="programDTO.SourceDTO">
+update teamproject set java = #{java}, web = #{web}, jsp = #{jsp}   where id = #{id}
+</update>
+<delete id="delete" parameterType="programDTO.SourceDTO">
+delete from teamproject where id = #{id}
+</delete>
+</mapper>

@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import scoreDTO.StudentDTO;
 
+//직접 입력이나 출력은 안하고 처리만 한다
 public class StudentDAO {
 	SqlSessionFactory factory;
 	static StudentDAO studentDAO;
@@ -42,9 +43,11 @@ public class StudentDAO {
 		sqlSession.close();
 	}
 
-	public void selectConnect() {
+	public List<StudentDTO> selectConnect() {
 		SqlSession sqlSession =factory.openSession();
-		List <StudentDTO> list = sqlSession.selectList("zxc");
+		List<StudentDTO> list = sqlSession.selectList("zxc");
+		sqlSession.close();
+		return list;
 	}
 
 	public void updateConnect() {
@@ -54,7 +57,10 @@ public class StudentDAO {
 		sqlSession.close();
 	}
 
-	public void deleteConnect() {
-
+	public void deleteConnect(StudentDTO studentDTO) {
+		SqlSession sqlSession =factory.openSession();
+		sqlSession.delete("111",studentDTO);
+		sqlSession.commit();
+		sqlSession.close();
 	}
 }

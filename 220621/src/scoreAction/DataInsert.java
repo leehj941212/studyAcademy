@@ -9,8 +9,7 @@ public class DataInsert implements ScoreInterface {
 	Scanner scanner = new Scanner(System.in);
 	@Override
 	public void executeMysql() {
-		StudentDTO studentDTO = new StudentDTO();
-		
+		StudentDTO studentDTO = new StudentDTO();	
 		
 		System.out.println("name(varchar(20)) 의 값을 입력하세요");
 		studentDTO.setName(scanner.nextLine());

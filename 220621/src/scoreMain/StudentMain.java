@@ -6,7 +6,7 @@ import scoreAction.*;
 
 
 public class StudentMain {
-	
+
 	public static void main(String[] args) {
 		ScoreInterface scoreInterface;
 		Scanner scanner = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class StudentMain {
 			System.out.println("4 . 삭제");
 			System.out.println("5 . 종료");
 			menuNum = scanner.nextLine();
-			
+
 			switch (menuNum) {
 			//DataCreate.executeMysql() -> studentDAO.insertConnect() 
 			//-> mysqlconnectconfig.xml -> mysqlinsertconfig.xml 의 insert("") 실행
@@ -28,16 +28,21 @@ public class StudentMain {
 				scoreInterface = new DataInsert();
 				scoreInterface.executeMysql();
 				break;
+				//DataSelect.executeMysql() -> studentDAO.insertConnect() 
+				//-> mysqlconnectconfig.xml -> mysqlinsertconfig.xml 의 select("") 실행
+				//-> List 형태로 값을 받아 return -> 다시 studentDAO.insertConnect() 에서 출력
 			case "2": case "조회":
 				scoreInterface = new DataSelect();
 				scoreInterface.executeMysql();
 				break;
-				//DataUpdate.executeMysql() -> studentDAO.updateConnect() 
-				//-> mysqlconnectconfig.xml -> mysqlinsertconfig.xml 의 update("") 실행
+				//DataUpdate.executeMysql() -> studentDAO.deleteConnect() 
+				//-> mysqlconnectconfig.xml -> mysqlinsertconfig.xml 의 delete("") 실행
 			case "3": case "수정":
 				scoreInterface = new DataUpdate();
 				scoreInterface.executeMysql();
 				break;
+				//DataDelete.executeMysql() -> studentDAO.insertConnect() 
+				//-> mysqlconnectconfig.xml -> mysqlinsertconfig.xml 의 insert("") 실행
 			case "4": case "삭제":
 				scoreInterface = new DataDelete();
 				scoreInterface.executeMysql();

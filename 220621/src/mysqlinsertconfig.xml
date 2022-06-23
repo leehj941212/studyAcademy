@@ -13,4 +13,7 @@ update score set name ='qwe' where name = 'asd'
 <select id="zxc" resultType="scoreDTO.StudentDTO">
 select*from score
 </select>
+<delete id="111" parameterType="scoreDTO.StudentDTO">
+delete from score where name = #{name}
+</delete>
 </mapper>
