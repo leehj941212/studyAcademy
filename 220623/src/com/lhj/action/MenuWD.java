@@ -1,4 +1,4 @@
-package programAction;
+package com.lhj.action;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import programDTO.SourceDTO;
+import com.lhj.dto.SourceDTO;
 
 public class MenuWD implements ActionListener {
 	SourceDTO sourceDTO = new SourceDTO();

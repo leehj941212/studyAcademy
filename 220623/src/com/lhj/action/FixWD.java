@@ -1,4 +1,4 @@
-package programAction;
+package com.lhj.action;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import programDAO.TotalDAO;
-import programDTO.SourceDTO;
+import com.lhj.dao.TotalDAO;
+import com.lhj.dto.SourceDTO;
 
 public class FixWD implements ActionListener{
 	SourceDTO sourceDTO = new SourceDTO();

@@ -1,4 +1,4 @@
-package programAction;
+package com.lhj.action;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-import programDTO.SourceDTO;
+import com.lhj.dto.SourceDTO;
 
 
 public class DeleteWD implements ActionListener{

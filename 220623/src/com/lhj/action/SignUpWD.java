@@ -1,4 +1,4 @@
-package programAction;
+package com.lhj.action;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import programDAO.TotalDAO;
-import programDTO.SourceDTO;
+import com.lhj.dao.TotalDAO;
+import com.lhj.dto.SourceDTO;
 
 
 class SignUpWD implements ActionListener , KeyListener {
@@ -51,27 +51,11 @@ class SignUpWD implements ActionListener , KeyListener {
 		if (e.getSource() == buttons.get("회원가입") ) {
 
 			//오류체크에 아무것도 뜨지 않았을때
-			if (!checkLabels.get("아이디체크").getText().equals("")
-					||!checkLabels.get("비밀번호체크").getText().equals("")
-					||!checkLabels.get("이름체크").getText().equals("")
-					||!checkLabels.get("성별체크").getText().equals("")
-					||!checkLabels.get("휴대폰번호체크").getText().equals("")
-					||!checkLabels.get("생년월일체크").getText().equals("")
-					||!checkLabels.get("학번체크").getText().equals("")
-					||!checkLabels.get("보물체크").getText().equals("")) {
+			if (isAllErrorCheck()) {
 				JOptionPane.showMessageDialog(null, "오류를 확인하세요");
 
 				//입력안한 칸이 없을때
-			} else if(textFields.get("아이디").getText().equals("")
-					||String.valueOf(passwordFields.get("비밀번호").getPassword()).equals("")
-					||textFields.get("이름").getText().equals("")
-					||comboBoxs.get("성별").getSelectedItem().toString().equals("성별")
-					||textFields.get("휴대폰번호").getText().equals("")
-					||textFields.get("생년").getText().equals("")
-					||comboBoxs.get("생월").getSelectedItem().toString().equals("월")
-					||textFields.get("생일").getText().equals("")
-					||textFields.get("학번").getText().equals("")
-					||textFields.get("보물").getText().equals("")) {
+			} else if(isAllBlankCheck()) {
 				JOptionPane.showMessageDialog(null, "빈칸을 입력하세요");
 
 				//오류가 없고 빈칸이 없을때
@@ -441,6 +425,37 @@ class SignUpWD implements ActionListener , KeyListener {
 
 		setButtons("취소", "취소", 230, 900, 100, 40);
 		setButtons("회원가입", "회원가입", 350, 900, 100, 40);
+	}
+
+	boolean isAllErrorCheck() {
+		boolean errorCheck = false;
+		for (String key : checkLabels.keySet()) {
+			if (!checkLabels.get(key).getText().equals("")) {
+				errorCheck = true;
+				break;
+			}
+		}
+		return errorCheck;
+	}
+
+	boolean isAllBlankCheck() {
+		boolean blankCheck = false;
+		for (String key : textFields.keySet()) {
+			if (textFields.get(key).getText().equals("")) {
+				blankCheck = true;
+				break;
+			}
+		}
+
+		if (comboBoxs.get("성별").getSelectedItem().toString().equals("성별")) {
+			blankCheck = true;
+		}
+
+		if (comboBoxs.get("생월").getSelectedItem().toString().equals("월")) {
+			blankCheck = true;
+		}
+
+		return blankCheck;
 	}
 
 

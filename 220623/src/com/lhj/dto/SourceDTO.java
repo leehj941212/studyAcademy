@@ -1,4 +1,4 @@
-package programDTO;
+package com.lhj.dto;
 
 public class SourceDTO {
 	private String name, callNum, id, password, questions, gender;

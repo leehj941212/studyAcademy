@@ -1,4 +1,4 @@
-package programDAO;
+package com.lhj.dao;
 
 import java.io.Reader;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import programDTO.SourceDTO;
+import com.lhj.dto.SourceDTO;
 
 public class TotalDAO {
 	SourceDTO sourceDTO;

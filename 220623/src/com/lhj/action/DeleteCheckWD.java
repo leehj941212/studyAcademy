@@ -1,4 +1,4 @@
-package programAction;
+package com.lhj.action;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -10,8 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import programDAO.TotalDAO;
-import programDTO.SourceDTO;
+import com.lhj.dao.TotalDAO;
+import com.lhj.dto.SourceDTO;
 
 public class DeleteCheckWD implements ActionListener{
 	SourceDTO sourceDTO = new SourceDTO();
