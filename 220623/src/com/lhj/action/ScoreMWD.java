@@ -230,7 +230,7 @@ public class ScoreMWD implements ActionListener{
 		}else if(e.getSource()==message){
 			messageFrame.setVisible(false);
 		}else if(e.getSource()==exit) {
-			new MenuWD(sourceDTO);
+			new Menu(sourceDTO);
 			frame.setVisible(false);
 		}else if(e.getSource()==reset) {
 			javaJumsu.setText(String.valueOf(sourceDTO.getJava()));

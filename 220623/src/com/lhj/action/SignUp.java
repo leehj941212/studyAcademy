@@ -1,6 +1,8 @@
 package com.lhj.action;
 
 import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -9,6 +11,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -22,7 +25,7 @@ import com.lhj.dao.TotalDAO;
 import com.lhj.dto.SourceDTO;
 
 
-class SignUpWD implements ActionListener , KeyListener {
+class SignUp implements ActionListener , KeyListener {
 	SourceDTO sourceDTO = new SourceDTO();
 	TotalDAO totalDAO;
 
@@ -34,8 +37,11 @@ class SignUpWD implements ActionListener , KeyListener {
 	Map<String,JPasswordField> passwordFields = new Hashtable<String,JPasswordField>();
 	Map<String,JPanel> panels = new Hashtable<String,JPanel>();
 	JFrame frame = new JFrame("회원가입");
+	ImageIcon bonobono = new ImageIcon("src/com/lhj/image/bonobono.jpg");
+	Image img = bonobono.getImage();
+	
 
-	SignUpWD() {
+	SignUp() {
 		//DB연결 안되어 있으면 연결
 		totalDAO = TotalDAO.connectMysql();
 		panels();
@@ -52,11 +58,11 @@ class SignUpWD implements ActionListener , KeyListener {
 
 			//오류체크에 아무것도 뜨지 않았을때
 			if (isAllErrorCheck()) {
-				JOptionPane.showMessageDialog(null, "오류를 확인하세요");
+				JOptionPane.showMessageDialog(null, "오류를 확인하세요", "입력값 오류", JOptionPane.ERROR_MESSAGE);
 
 				//입력안한 칸이 없을때
 			} else if(isAllBlankCheck()) {
-				JOptionPane.showMessageDialog(null, "빈칸을 입력하세요");
+				JOptionPane.showMessageDialog(null, "빈칸을 입력하세요" ,"빈칸 오류", JOptionPane.ERROR_MESSAGE);
 
 				//오류가 없고 빈칸이 없을때
 				//회원가입 시작
@@ -75,8 +81,8 @@ class SignUpWD implements ActionListener , KeyListener {
 
 				totalDAO.signUp(sourceDTO);
 				//로그인화면
-				JOptionPane.showMessageDialog(null, "회원가입되었습니다");
-				new LoginWD();
+				JOptionPane.showMessageDialog(null, "회원가입되었습니다", "회원가입 완료" , JOptionPane.PLAIN_MESSAGE);
+				new Login();
 				frame.setVisible(false);
 			}
 
@@ -86,7 +92,7 @@ class SignUpWD implements ActionListener , KeyListener {
 
 		//취소 버튼 눌렀을때 시작
 		if (e.getSource() == buttons.get("취소") ) {
-			new LoginWD();
+			new Login();
 			frame.setVisible(false);
 		}
 		//취소 버튼 눌렀을때 끝
@@ -174,7 +180,7 @@ class SignUpWD implements ActionListener , KeyListener {
 						//비밀번호 체크 끝
 
 						//비밀번호 확인 체크 시작
-						if (passwordFields.get("비밀번호확인").getPassword().equals("")) {
+						if (String.valueOf(passwordFields.get("비밀번호확인").getPassword()).equals("")) {
 							checkLabels.get("비밀번호체크").setText("");
 						} else  {
 
@@ -346,7 +352,19 @@ class SignUpWD implements ActionListener , KeyListener {
 	}
 
 	void panels() {
-		panels.put("전체",new JPanel());
+		
+		panels.put("전체",new JPanel(){
+	           /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+	            protected void paintComponent(Graphics g){
+	               super.paintComponent(g);
+	               g.drawImage(img, 350, 50, 100, 100, this);
+	            }
+	        });
 		panels.get("전체").setLayout(null);
 	}
 

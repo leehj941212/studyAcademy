@@ -10,27 +10,32 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
+import com.lhj.dao.TotalDAO;
 import com.lhj.dto.SourceDTO;
 
 
-public class DeleteWD implements ActionListener{
+public class Delete implements ActionListener{
 	SourceDTO sourceDTO = new SourceDTO();
-	
+	TotalDAO totalDAO;
+
 	JLabel jlReal, jlBlink1, jlBlink2, jlBlink3;
 	JButton yes, no;
 	JPasswordField jpf;
 	JFrame frame = new JFrame("È¸¿øÅ»Åð");
-	
-	DeleteWD(SourceDTO sourceDTO){
+
+	Delete(SourceDTO sourceDTO){
 		this.sourceDTO = sourceDTO;
+		//DB¿¬°á ¾ÈµÇ¾î ÀÖÀ¸¸é ¿¬°á
+		totalDAO = TotalDAO.connectMysql();
 		set();
 		setPanel();
 		setDisplay();
 	}
-	
+
 	void set() {
 		jlReal = new JLabel("Á¤¸» Å»ÅðÇÏ½Ã°Ú½À´Ï±î?");
 		yes = new JButton("¿¹");
@@ -41,35 +46,35 @@ public class DeleteWD implements ActionListener{
 		Font font = new Font("±Ã¼­ º¸Åë", Font.BOLD, 20); //±Û¾¾Ã¼ ¾È¹Ù²ñ.. Å©±â¸¸ ¹Ù²ñ
 		jlReal.setFont(font);
 		jlReal.setForeground(Color.red); //»ö±ò º¯°æ ok
-		
+
 		yes.addActionListener(this);
 		no.addActionListener(this);
 	}
-	
+
 	void setPanel() {
 		JPanel jp1 = new JPanel();
 		jp1.add(jlReal);
-		
+
 		JPanel jp2 = new JPanel(new GridLayout(1,0,10,10));
 		jp2.add(yes);
 		jp2.add(no);
-		
+
 		JPanel jp3 = new JPanel();
 		jp3.add(jlBlink1);
-		
+
 		JPanel jp4 = new JPanel();
 		jp4.add(jlBlink2);
-		
+
 		JPanel jp5 = new JPanel();
 		jp5.add(jlBlink3);
-		
+
 		frame.add(jp1, BorderLayout.NORTH);
 		frame.add(jp2, BorderLayout.CENTER);
 		frame.add(jp3, BorderLayout.SOUTH);
 		frame.add(jp4, BorderLayout.WEST);
 		frame.add(jp5, BorderLayout.EAST);		
 	}
-	
+
 	void setDisplay() {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,15 +86,17 @@ public class DeleteWD implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-			if (e.getSource() == yes) {
-				new DeleteCheckWD(sourceDTO);
-				frame.setVisible(false);
-			}else if (e.getSource() == no) {
-				new MenuWD(sourceDTO);
-				frame.setVisible(false);
-			}
+		if (e.getSource() == yes) {
+			totalDAO.delete(sourceDTO);
+			JOptionPane.showMessageDialog(null, "Å»ÅðÇÏ¼Ì½À´Ï´Ù");
+			new Login();
+			frame.setVisible(false);
+		}else if (e.getSource() == no) {
+			new Menu(sourceDTO);
+			frame.setVisible(false);
+		}
 
-		
+
 	}
 
 }
