@@ -1,0 +1,39 @@
+table{
+	table-layout: fixed;
+}
+
+input{
+	height: 40px;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+button{
+	height: 40px;
+}
+
+td{
+	height: 50px;
+}
+
+.lineHeight300per{
+line-height:300%
+}
+
+.height100per{
+	height: 100%;
+}
+
+.height30px{
+	height: 30px
+}
+
+.verticalAlignMiddle{
+	vertical-align: middle;
+}
+
+.font30px{
+	font-size: 30px;
+}
+
+
