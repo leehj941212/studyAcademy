@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<style type="text/css">
+
+	/*header , section 를 감싸는 div*/
+	.wrap1{
+		overflow: hidden;
+		width: 1080px;
+		margin: 0px auto;
+	}
+
+	/*header*/
+	header{
+		width: 1080px;
+		height: 100px;
+	}
+	.languageSetting{
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 300px;
+		float: left;
+	}
+	.headerCenter{
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 480px;
+		height: 100px;
+		float: left;
+		text-align: center;
+	}
+	.headerCenter > div:first-child{
+		width: 480px;
+		font-size: 20pt;
+		font-weight: bold;
+		line-height: 60px;
+	}
+	.headerCenter > div > div{
+		position: relative;
+		bottom: 0;
+		width: 120px;
+		float: left;
+		text-align: center;
+	}
+	.topNav{
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 300px;
+		float: left;
+		text-align: right;
+	}
+
+	/*section*/
+	.wrap1 > section{
+		width: 1080px;
+		height: 620px;
+	}
+
+	.wrap1 > section > div:first-child{
+		width: 1080px;
+		height: 300px;
+		background-color: orange;
+	}
+
+	.wrap1 > section > div:nth-child(2){
+		width: 1080px;
+		height: 100px;
+	}
+
+	.wrap1 > section > div:nth-child(2) > div{
+		float: left;
+		width: 270px;
+		height: 100px;
+		background-color: pink;
+	}
+
+	.wrap1 > section > div:nth-child(2) > div:nth-child(2n){
+		background-color: skyblue;
+	}
+
+
+	.wrap1 > section > div:nth-child(3){
+		width: 100%;
+		height: 220px;
+	}
+
+	.wrap1 > section > div:nth-child(3) > div{
+		float: left;
+		width: 50%;
+		height: 100%;
+		background-color: lightgreen;
+	}
+
+	.wrap1 > section > div:nth-child(3) > div:last-child{
+		background-color: yellow;
+	}
+
+	/*footer*/
+	footer {
+		width: 100%;
+		height: 100px;
+		background-color: lightgray;
+		margin: 50px 0 0 0;
+
+	}
+
+	footer > div{
+		width: 1080px;
+		height: 100px;
+		background-color: lightgray;
+		margin: 0px auto;
+	}
+
+	footer header{
+		width: 1080px;
+		height: 40px;
+	}
+
+	footer header > div {
+		float: left;
+		width: 540px;
+		height: 40px;
+		line-height: 40px;
+	}
+
+	footer header > div:last-child{
+		text-align: right;
+	}
+
+	footer section{
+		width: 1080px;
+		height: 60px;
+	}
+
+	footer section > div {
+		float: left;
+		height: 60px;
+		line-height: 40px;
+		margin: 0 20px 0 0;
+	}
+
+	footer section > div:last-child{
+		float: right;
+		margin: 0;
+
+	}
+
+
+
+	
+
+
+</style>
+<body>
+	<div class="wrap1">
+		<header>
+			<div class="languageSetting">언어설정
+			</div>
+			<div class="headerCenter">
+				<div>로고</div>
+				<div>
+					<div>메인네비1</div>
+					<div>메인네비2</div>
+					<div>메인네비3</div>
+					<div>메인네비4</div>
+				</div>
+			</div>
+			<div class="topNav">탑네비
+			</div>
+		</header>
+		<section>
+			<div>이미지 슬라이더</div>
+			<div>
+				<div>탑배너1</div>
+				<div>탑배너2</div>
+				<div>탑배너3</div>
+				<div>탑배너4</div>
+			</div>
+			<div>
+				<div>바텀배너1</div>
+				<div>바텀배너2</div>
+			</div>
+		</section>
+	</div>
+	<footer>
+		<div>
+			<header>
+				<div>푸터탑네비</div>
+				<div>sns네비</div>
+			</header>
+			<hr>
+			<section>
+				<div>주소카피라잇</div>
+				<div>푸터바텀네비</div>
+				<div>웹접근성마크</div>
+			</section>
+		</div>
+	</footer>
+	
+</body>
+</html>
