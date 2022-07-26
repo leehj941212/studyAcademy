@@ -14,6 +14,11 @@
 		 body *{
 		 	overflow: hidden;
 		 }
+		 hr{
+		 	border: 0;
+		 	height: 1px;
+		 	background-color: lightgray;
+		 }
 		.txtleft{
 			float: left;
 		}
@@ -24,7 +29,8 @@
 			width: fit-content;
 			height: fit-content;
 			text-align: center;
-			margin: 50px auto;
+			line-height: 100px;
+			margin: auto;
 		}
 		.line{
 			width: auto;
@@ -38,23 +44,29 @@
 		}
 		.leftlist{
 			padding-right: 20px;
-			padding-top: 12px;
+			padding-top: 15px;
 			list-style: none;
 			float: left;
+			line-height: 20px;
+			margin: auto;
+		}
+		ul{
+			width: fit-content;
 		}
 		#header{
 			width: 1200px;
-			height: 150px;
+			height: 140px;
 			margin: 0 auto;
 		}
 		#title{
-			font-size: 22pt;
+			font-size: 30pt;
 			font-weight: bold;
 		}
 		#topnav{
+			padding-top: 20px;
 			width: 1200px;
 			height: 20px;
-			font-size: 10pt;
+			font-size: 11pt;
 		}
 		#mainnav{
 			width: 1200px;
@@ -62,6 +74,7 @@
 			margin: 0px auto;
 			font-size: 14pt;
 			font-weight: bold;
+
 		}
 		#subnav{
 			width: 1200px;
@@ -71,7 +84,7 @@
 		}
 		#section{
 			width: 1225px;
-			height: 580px;
+			height: 582px;
 			border: 1px solid lightgray;
 			margin: 0 auto;
 			padding: 30px 0 0;
@@ -115,8 +128,10 @@
 		</nav>
 		<div class="txtcenter">
 			<p id="title">오늘의 마켓</p>
+			
 		</div>
 	</header>
+
 	<nav id="mainnav">
 		<ul>
 			<li class="leftlist">스토어</li>
@@ -124,20 +139,24 @@
 			<li class="leftlist">펀딩</li>
 		</ul>
 	</nav>
-	<nav id="subnav">	
-		<ul>
-			<li class="leftlist">스토리</li>
-			<li class="leftlist">공동구매</li>
-			<li class="leftlist">우리동네 장터찾기</li>
-		</ul>
-		<ul class="txtright">
-			<li class="rightlist">검색==================</li>
-			<li class="rightlist">쪽지</li>
-			<li class="rightlist">좋아요</li>
-			<li class="rightlist">장바구니</li>
-		</ul>
+	<nav id="subnav">
+		<div style="width: 500px; float:left;">	
+			<ul>
+				<li class="leftlist">스토리</li>
+				<li class="leftlist">공동구매</li>
+				<li class="leftlist">우리동네 장터찾기</li>
+			</ul>
+		</div>
+		<div style="width: 500px; float: right; padding-top: 15px;">
+			<ul class="txtright">
+				<li class="rightlist">검색==================</li>
+				<li class="rightlist">쪽지</li>
+				<li class="rightlist">좋아요</li>
+				<li class="rightlist">장바구니</li>
+			</ul>
+		</div>
 	</nav>
-	<div id="line"></div>
+	<hr/>
 	<div id="section">
 		<div class="bestpost">
 			<p>포스트 제목</p>
@@ -152,7 +171,11 @@
 		</ul>
 	</nav>
 	<div id="section2">
-		
+		<div>프로필 사진</div>
+		<p>닉네임</p>
+		자기소개 한마디
+		<div></div>
 	</div>
+
 </body>
 </html>
