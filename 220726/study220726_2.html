@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body *{
+			box-sizing: content-box;
+			/*overflow: hidden;*/
+		}
+		ul{
+			list-style: none;
+		}
+		header{
+			width: 1200px;
+			height: 200px;
+			margin: 0 auto;
+			background-color: red;
+		}
+		.headerblank{
+			float: left;
+			width: 300px;
+			height: 100%;
+			background-color: gray;
+		}
+		.centeralien{
+			float: left;
+			width: 600px;
+			height: 100%;
+			background-color: pink;
+			text-align: center;
+
+		}
+		.headerCenter{
+			float: left;
+			width: 600px;
+			height: 100%;
+			background-color: yellow;
+			align-items: center;
+			vertical-align: middle;
+			text-align: center;
+		}
+		.topNav{
+			float: left;
+			width: 300px;
+			height: 100%;
+			background-color: green;
+		}
+
+		header li {
+			float: left;
+			margin: 0 5px 0 0;
+		}
+		header li:last-child{
+			margin: 0;
+		}
+
+		nav{
+			width: 1200px;
+			height: 100px;
+			margin: 0px auto;
+			background-color: blue;
+		}
+		.mainNav{
+			float: left;
+			width: 100%;
+			background-color: green;
+		}
+		.subNav{
+			float: left;
+			background-color: orange;
+		}
+		.toolbar{
+			float: right;
+			background-color: gray;
+		}
+		nav li{
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="headerblank">헤더공백</div>
+		<ul class="headerCenter">
+			<li>로고그림</li>
+			<li>로고</li>
+			<li>여백</li>
+		</ul>
+		<ul class="topNav">
+			<li>회원가입</li>
+			<li>로그인</li>
+			<li>고객센터*</li>
+		</ul>
+		
+	</header>
+	<nav>
+		<div>
+			<ul class="mainNav">
+				<li>스토어</li>
+				<li>커뮤니티</li>
+				<li>펀딩</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="subNav">
+				<li>==</li>
+				<li>전체 카테고리</li>
+				<li>신상품</li>
+				<li>베스트</li>
+				<li>특가/혜택</li>
+			</ul>
+			<ul class="toolbar">
+				<li>
+					<input type="text" name="search1" placeholder="search">
+				</li>
+				<li>쪽지</li>
+				<li>하트</li>
+				<li>카트</li>
+			</ul>
+		</div>
+	</nav>
+
+</body>
+</html>

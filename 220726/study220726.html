@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: content-box;
+		}
+
+		body *{
+			overflow: hidden;
+		}
+
+		header{
+			width: 1080px;
+			height: 100px;
+			margin: 0px auto;
+			background-color: orange;
+		}
+		header > * {
+			float: left;
+			height: 100%;
+			background-color: red;
+		}
+		header > ul {
+			float: right;
+			list-style: none;
+			background-color: blue;
+		}
+		header li {
+			float: left;
+			margin: 0 5px 0 0;
+		}
+		header li:last-child{
+			margin: 0;
+		}
+
+		nav{
+			width: 100%;
+			height: 100px;
+			background-color: blue;
+		}
+		nav > ul{
+			width: auto;
+			height: 100px;
+			margin: 0px auto 0px auto;
+			list-style: none;
+			text-align: center;
+			background-color: gray;
+		}
+		nav li {
+			margin: 30px 5px 0 5px;
+			display: inline-block;
+		}
+
+		.wrap1{
+			width: 1280px;
+			margin: 10px auto 10px auto;
+			background-color: green;
+		}
+
+		section{
+			float: left;
+			width: 1080px;
+			margin: 0px 0px 0px 100px;
+		}
+		section * {
+			border: 1px solid gray;
+		}
+
+		.bigBox{
+			float: left;
+			width: 520px;
+			height: 300px;
+			margin: 0px 0px 0px 0px;
+			background-color: gray;
+		}
+
+		.bigBox:nth-child(2n){
+			position: relative;
+			float: right;
+			border: 0;
+		}
+
+		.middleBox{
+			float: left;
+			width: 520px;
+			height: 130px;
+			background-color: orange;
+		}
+		.bigBox > .middleBox:nth-child(1){
+			border: 0;
+		}
+		.middleBox:nth-child(2n){
+			float: right;
+		}
+		.middleBox2{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			float: left;
+			width: 520px;
+			height: 130px;
+			background-color: orange;
+		}
+		.smallBox{
+			float: left;
+			width: 240px;
+			height: 130px;
+			margin: 0px 0px 0px 0px;
+			background-color: red;
+		}
+		.smallBox:nth-child(2n){
+			float: right;
+		}
+		.sectionLow{
+			clear: none;
+			width: 1080px;
+			height: 130px;
+			margin: 20px 0px 0px 0px;
+			background-color: blue;
+			border: 0;
+		}
+
+		aside{
+			float: left;
+			width: auto;
+			height: 300px;
+			margin: 0;
+			background-color: pink;
+		}
+		aside > div{
+			position: fixed;
+			width: 100px;
+			height: 300px;
+			background-color: deeppink;
+		}
+		footer{
+			clear: none;
+			width: 1080px;
+			height: 100px;
+			margin: 0px auto;
+			background-color: gray;
+		}
+		footer > ul {
+			float: left;
+			height: 100%;
+			list-style: none;
+			background-color: blue;
+		}
+
+		footer li {
+			
+		}
+		footer > div {
+			float: right;
+			height: 100%;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div>로고</div>
+		<ul>
+			<li>탑네비
+			</li>
+			<li>탑네비2
+			</li>
+		</ul>
+	</header>
+	<nav>
+		<ul>
+			<li>메인네비1</li>
+			<li>메인네비2</li>
+			<li>메인네비3</li>
+			<li>메인네비4</li>
+			<li>메인네비5</li>
+			<li>메인네비6</li>
+		</ul>
+	</nav>
+	<div class="wrap1">
+		<section>
+			<div>
+				<div class="bigBox">
+					이미지 슬라이더1
+				</div>
+				<div class="bigBox">
+					<div class="middleBox">
+						<div class="smallBox">
+							공지사항
+						</div>
+						<div class="smallBox">
+							동영상
+						</div>
+					</div >
+					<div class="middleBox2">
+						이미지 슬라이더2
+					</div>
+				</div>
+			</div>
+			<div class="sectionLow">
+				<div class="middleBox">
+					제품소개
+				</div>
+				<div class="middleBox">
+					탭바
+				</div>
+			</div>
+			<div class="sectionLow">
+				<div class="middleBox">
+					<div class="smallBox">
+						배너1
+					</div>
+					<div class="smallBox">
+						배너2
+					</div>
+				</div>
+				<div class="middleBox">
+					하이모테크놀로지
+				</div>
+			</div>
+			<div class="sectionLow">
+				<div class="middleBox">
+					<div class="smallBox">
+						배너3
+					</div>
+					<div class="smallBox">
+						배너4
+					</div>
+				</div>
+				<div class="middleBox">
+					커스텀센터
+				</div>
+			</div>
+		</section>
+		<aside>
+			<div>
+				퀵메뉴
+			</div>
+		</aside>
+	</div>
+	<footer>
+		<ul>
+			<li>푸터네비</li>
+			<li>주소</li>
+			<li>카피라잇</li>
+		</ul>
+		<div>
+			패밀리사이트
+		</div>
+	</footer>
+</body>
+</html>
