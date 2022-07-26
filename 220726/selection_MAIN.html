@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MAIN</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+		 	font-family: 'Nanum Gothic', sans-serif;
+		 }
+		 body *{
+		 	overflow: hidden;
+		 }
+		.txtleft{
+			float: left;
+		}
+		.txtright{
+			float: right;
+		}
+		.txtcenter{
+			width: fit-content;
+			height: fit-content;
+			text-align: center;
+			margin: 50px auto;
+		}
+		.line{
+			width: auto;
+			height: 2px;
+			background-color: lightgray;
+		}
+		.rightlist{
+			padding-left: 20px;
+			list-style: none;
+			float: left;
+		}
+		.leftlist{
+			padding-right: 20px;
+			padding-top: 12px;
+			list-style: none;
+			float: left;
+		}
+		#header{
+			width: 1200px;
+			height: 150px;
+			margin: 0 auto;
+		}
+		#title{
+			font-size: 22pt;
+			font-weight: bold;
+		}
+		#topnav{
+			width: 1200px;
+			height: 20px;
+			font-size: 10pt;
+		}
+		#mainnav{
+			width: 1200px;
+			height: 50px;
+			margin: 0px auto;
+			font-size: 14pt;
+			font-weight: bold;
+		}
+		#subnav{
+			width: 1200px;
+			height: 50px;
+			margin: 0 auto;
+			font-size: 12pt;
+		}
+		#section{
+			width: 1225px;
+			height: 580px;
+			border: 1px solid lightgray;
+			margin: 0 auto;
+			padding: 30px 0 0;
+		}
+		.bestpost{
+			float: left;
+			width: 900px;
+			height: 580px;
+			border: 1px solid lightgray;
+			margin: 0px 10px;
+		}
+		.event{
+			float: left;
+			width: 280px;
+			height: 580px;
+			border: 1px solid lightgray;
+			margin: 0px 10px;
+		}
+		#section2{
+			width: 1225px;
+			height: 300px;
+			border: 1px solid lightgray;
+			margin: 0 auto;
+			padding: 30px 0 0;
+		}
+
+	</style>
+	<link href="../styles/joinstyle.css" rel="stylesheet" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<nav id="topnav">
+			<ul class="txtright">
+				<li class="rightlist">닉네임 님 ▼  |</li>
+				<li class="rightlist">로그아웃  |</li>
+				<li class="rightlist">고객센터 ▼</li>
+			</ul>
+		</nav>
+		<div class="txtcenter">
+			<p id="title">오늘의 마켓</p>
+		</div>
+	</header>
+	<nav id="mainnav">
+		<ul>
+			<li class="leftlist">스토어</li>
+			<li class="leftlist">커뮤니티</li>
+			<li class="leftlist">펀딩</li>
+		</ul>
+	</nav>
+	<nav id="subnav">	
+		<ul>
+			<li class="leftlist">스토리</li>
+			<li class="leftlist">공동구매</li>
+			<li class="leftlist">우리동네 장터찾기</li>
+		</ul>
+		<ul class="txtright">
+			<li class="rightlist">검색==================</li>
+			<li class="rightlist">쪽지</li>
+			<li class="rightlist">좋아요</li>
+			<li class="rightlist">장바구니</li>
+		</ul>
+	</nav>
+	<div id="line"></div>
+	<div id="section">
+		<div class="bestpost">
+			<p>포스트 제목</p>
+		</div>
+		<div class="event">event</div>
+	</div>
+	<nav id="subnav">	
+		<ul>
+			<li class="leftlist">인기회원</li>
+			<li class="leftlist">오늘의 포스팅</li>
+			<li class="leftlist">팔로잉</li>
+		</ul>
+	</nav>
+	<div id="section2">
+		
+	</div>
+</body>
+</html>
