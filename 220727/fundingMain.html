@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MAIN</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-family: 'Nanum Gothic', sans-serif;
+		}
+		body *{
+			overflow: hidden;
+		}
+		hr{
+			border: 0;
+			height: 1px;
+			background-color: lightgray;
+		}
+		.txtright{
+			float: right;
+		}
+		.txtcenter{
+			width: fit-content;
+			height: fit-content;
+			text-align: center;
+			line-height: 100px;
+			margin: auto;
+		}
+		.rightlist{
+			padding-left: 20px;
+			list-style: none;
+			float: left;
+		}
+		.leftlist{
+			padding-right: 20px;
+			padding-top: 15px;
+			list-style: none;
+			float: left;
+			line-height: 20px;
+			margin: auto;
+		}
+		ul{
+			width: fit-content;
+		}
+		#header{
+			width: 1200px;
+			height: 140px;
+			margin: 0 auto;
+		}
+		#title{
+			font-size: 30pt;
+			font-weight: bold;
+		}
+		#topnav{
+			padding-top: 20px;
+			width: 1200px;
+			height: 20px;
+			font-size: 11pt;
+		}
+		#mainnav{
+			width: 1200px;
+			height: 50px;
+			margin: 0px auto;
+			font-size: 14pt;
+			font-weight: bold;
+
+		}
+		#subnav{
+			width: 1200px;
+			height: 50px;
+			margin: 0 auto;
+			font-size: 12pt;
+		}
+
+
+
+		section{
+			width: 1200px;
+			margin: 0 auto;
+			border: 1;
+			display: block;
+			background-color: blueviolet;
+		}
+
+		section > *{
+			float: left;
+			width: 1200px;
+			border: 1;
+			background-color: yellow;
+		}
+
+		section > *:nth-child(2n){
+			background-color: green;
+		}
+
+		.fundingLeft{
+			float: left;
+			width: 900px;
+			height: 800px;
+			background-color: gray;
+		}
+		.fundingAD{
+			float: left;
+			width: 100%;
+			height: 400px;
+		}
+		.fundingDeadline{
+			width: 100%;
+			height: 400px;
+			background-color: orange;
+		}
+		.fundingDeadline li{
+			float: left;
+		}
+
+		.fundingRanking{
+			width: 300px;
+			height: 800px;
+		}
+		.fundingRanking > *{
+			width: 100%;
+		}
+		.fundingBottom{
+			width: 1200px;
+			height: 300px;
+		}
+		.fundingBottom li{
+			float: left;
+		}
+
+	</style>
+	<link href="../styles/joinstyle.css" rel="stylesheet" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<nav id="topnav">
+			<ul class="txtright">
+				<li class="rightlist">닉네임 님 ▼  |</li>
+				<li class="rightlist">로그아웃  |</li>
+				<li class="rightlist">고객센터 ▼</li>
+			</ul>
+		</nav>
+		<div class="txtcenter">
+			<p id="title">오늘의 마켓</p>
+			
+		</div>
+	</header>
+
+	<nav id="mainnav">
+		<ul>
+			<li class="leftlist">스토어</li>
+			<li class="leftlist">커뮤니티</li>
+			<li class="leftlist">펀딩</li>
+		</ul>
+	</nav>
+	<nav id="subnav">
+		<div style="width: 500px; float:left;">	
+			<ul>
+				<li class="leftlist">스토리</li>
+				<li class="leftlist">공동구매</li>
+				<li class="leftlist">우리동네 장터찾기</li>
+			</ul>
+		</div>
+		<div style="width: 500px; float: right; padding-top: 15px;">
+			<ul class="txtright">
+				<li class="rightlist">검색==================</li>
+				<li class="rightlist">쪽지</li>
+				<li class="rightlist">좋아요</li>
+				<li class="rightlist">장바구니</li>
+			</ul>
+		</div>
+	</nav>
+	<hr/>
+
+	<section>
+		<!-- 상단 -->
+		<div>
+			<!-- 좌측 -->
+			<div class="fundingLeft">
+				<div class="fundingAD">
+					광고
+				</div>
+				<div class="fundingDeadline">
+					<div>마감임박 프로젝트
+					</div>
+					<ul>
+						<li>프로젝트1</li>
+						<li>프로젝트2</li>
+						<li>프로젝트3</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 우측 -->
+			<div class="fundingRanking">
+				<div>실시간 랭킹</div>
+				<div align="right">전체보기</div>
+				<ul>
+					<li>프로젝트1</li>
+					<li>프로젝트2</li>
+					<li>프로젝트3</li>
+					<li>프로젝트4</li>
+					<li>프로젝트5</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="fundingBottom">
+			<div>최근 본 프로젝트</div>
+			<ul>
+				<li>프로젝트1</li>
+				<li>프로젝트2</li>
+				<li>프로젝트3</li>
+				<li>프로젝트4</li>
+			</ul>
+		</div>
+
+		<div class="fundingBottom">
+			<div>신규 프로젝트</div>
+			<ul>
+				<li>프로젝트1</li>
+				<li>프로젝트2</li>
+				<li>프로젝트3</li>
+				<li>프로젝트4</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>
