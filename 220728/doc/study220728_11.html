@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function exercise(form){
+			for (var i = 0; i < form.move.length; i++) {
+				if (form.move[i].checked == true) {
+					alert(form.move[i].value + " 종목을 선택하였습니다");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	운동 선택
+	<form>
+		<input type="radio" name="move" value="야구" checked>야구
+		<input type="radio" name="move" value="축구">축구
+		<input type="radio" name="move" value="테니스">테니스
+		<input type="radio" name="move" value="농구">농구
+		<input type="button" value="확인" onclick="exercise(this.form)">
+	</form>
+</body>
+</html>

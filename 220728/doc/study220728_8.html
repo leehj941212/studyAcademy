@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function info(){
+			str1 = document.myform.elements[0].value;
+			str2 = document.myform.elements[1].value;
+			document.write("form 태그 내의 첫번째 양식 입력 값 : " + str1 + "<p>");
+			document.write("form 태그 내의 두번째 양식 입력 값 : " + str2 + "<p>");
+
+		}
+	</script>
+</head>
+<body>
+	다음 단추를 누르면 form의 정보가 나타납니다.<p>
+		<form name="myform">
+			<div>
+				성명 : <input type="text" value="">
+				주소 : <input type="text" value="">
+				<input type="button" value="정보 보기" onclick="info()">
+			</div>
+		</form>
+	</body>
+	</html>

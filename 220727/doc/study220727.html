@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-family: 나눔고딕, NanumGothic, ng, 돋움, arial, helvetica, sans-serif !important;
+			font-size: 12px;
+			line-height: 19px;
+			color: #6f6f6f;
+			overflow-x: hidden;
+		}
+		body *{
+			overflow: hidden;
+		}
+		img {
+			vertical-align: top;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			display: list-item;
+			text-align: -webkit-match-parent;
+		}
+
+		header{
+			width: 100%;
+			border-bottom: 2px solid #b5121b;
+		}
+		.wrap1{
+			display: flex;
+			width: 1140px;
+			height: 142px;
+			margin: 0 auto;
+		}
+		.headerCenter{
+			float: left;
+			width: 940px;
+			height: 142px;
+			margin: 0px 0px 0px 100px;
+		}
+		.headerCenter li{
+			float: left;
+		}
+		.leftNav{
+			float: left;
+			width: 260px;
+		}
+		.logoImage{
+			display: flex;
+			float: left;
+			width: 420px;
+			height: 60px;
+			justify-content: center;
+			align-items: center;
+			padding: 17px 0 0 0;
+		}
+		.rightNav{
+			float: right;
+			margin: 17px 0 0 0;
+		}
+		.rightNav li{
+			float: left;
+			margin: 3px 12px 0 0;
+		}
+		.rightNav li:last-child{
+			margin: 3px 0 0 0;
+		}
+		.centerNav{
+			display: flex;
+			float: left;
+			width: 100%;
+			justify-content: space-around;
+			margin: 10px 0 0 0;
+		}
+		.centerNav li{
+			padding: 17px 0 0 0;
+		}
+		.affiliate{
+			float: left;
+			width: 100px;
+			height: 100px;
+		}
+		.affiliate > div{
+			position: fixed;
+			width: 100px;
+			height: 100px;
+			margin: 31px 0 0 15px;
+		}
+
+		aside{
+			width: 1920px;
+			height: 480px;
+			margin: 0 auto;
+		}
+
+		section{
+			width: 940px;
+			margin: 0px auto;
+			padding: 46px 0 100px 0;
+		}
+		section > div{
+			float: left;
+			width: 100%;
+		}
+		.sectionRow1{
+			float: left;
+		}
+		.sectionRow1Side{
+			float: left;
+			width: 225px;
+			padding: 30px 0 0 0;
+			background: #faf9f7;
+		}
+		.sectionRow1Side:last-child{
+			width: 240px;
+		}
+		.sectionRow1Side > img:first-child {
+			padding-left: 19px;
+		}
+		.sectionRow1Center{
+			float: left;
+			width: 460px;
+			margin: 0 0 0 15px;
+			padding: 30px 0 0 0;
+		}
+		.sectionRow1Center ul{
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			height: 200px;
+		}
+		.sectionRow1Center li{
+			float: left;
+			display: block;
+			text-align: center;
+		}
+		.sectionRow2{
+			float: left;
+			margin: 40px 0 0 0;
+		}
+		.sectionRow2one{
+			float: left;
+		}
+		.sectionRow2two{
+			float: right;
+		}
+		.sectionRow3{
+			float: left;
+			margin: 30px 0 0 0;
+		}
+		.sectionRow3 > ul{
+			float: left;
+			width: 205px;
+			margin: 0 35px 0 0;
+		}
+		.sectionRow3 > ul:last-child{
+			margin: 0;
+		}
+		.sectionRow3Icon{
+			display: flex;
+			justify-content: space-around;
+		}
+		.sectionRow3Icon li{
+			float: left;
+		}
+		.sectionRow4{
+			float: left;
+			margin: 50px 0 0 0;
+			padding: 40px 0 0 0;
+			border-top: 2px solid #b5121b;
+		}
+		.sectionRow4Link{
+		}
+		.sectionRow4Link > li{
+			float: left;
+		}
+
+		footer{
+			width: 100%;
+			height: 115px;
+			background: #ba000c;
+			padding: 33px 0 0 0;
+		}
+		.wrap2{
+			width: 940px;
+			height: 100%;
+			margin: 0 auto;
+			line-height: 14px;
+		}
+		.footerList1 > li{
+			float: left;
+			padding: 0 8px 0 3px;
+			font-size: 11px;
+			color: #faeff0;
+		}
+		footer p{
+			margin-top: 23px;
+			color: #de898e;
+			line-height: 16px;
+			word-spacing: -1px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="wrap1">
+			<div class="headerCenter">
+				<ul class="leftNav">
+					<li style="margin-right: 12px;">
+						<img src="../image/gnb_smenu01.png">
+					</li>
+					<li style="margin: 21px 12px 0 0 ;">
+						<img src="../image/gnb_smenu04.gif">
+					</li>
+				</ul>
+				<div class="logoImage"><img src="../image/logo_210302.gif">
+				</div>
+				<ul class="rightNav">
+					<li><img src="../image/util_login.gif"></li>
+					<li><img src="../image/util_join.gif"></li>
+					<li><img src="../image/util_09.gif"></li>
+					<li><img src="../image/util_05.gif"></li>
+					<li><img src="../image/util_chinese.gif"></li>
+				</ul>
+				
+				<ul class="centerNav">
+					<li><img src="../image/gnb_01.png"></li>
+					<li><img src="../image/gnb_02.png"></li>
+					<li><img src="../image/gnb_03.png"></li>
+					<li><img src="../image/gnb_04.png"></li>
+					<li><img src="../image/gnb_05.png"></li>
+					<li><img src="../image/gnb_06.png"></li>
+				</ul>
+			</div>
+			<div class="affiliate">
+				<div>
+					<img src="../image/floating.png">
+				</div>
+			</div>
+		</div>
+	</header>
+	<aside><img src="../image/mainBanner_202205240355551160.jpg"></aside>
+	<section>
+		<div class="sectionRow1">
+			<div class="sectionRow1Side">
+				<img src="../image/menu_tit.gif">
+				<img src="../image/menu_img01.gif">
+			</div>
+			<div class="sectionRow1Center">
+				<span style="display: block;">
+					<img src="../image/mall_tit.gif">
+				</span>
+				<span style="display: block;">
+					<img src="../image/mall_txt_210224.png"></span>
+					<ul>
+						<li>
+							<img src="../image/mallProdut_202207201118467350.png">
+							<span style="display: block;">(파우치) 아메리카노</span>
+						</li>
+						<li>
+							<img src="../image/mallProdut_202207201152111780.png">
+							<span style="display: block;">(파우치) 아메리카노</span>
+						</li>
+						<li>
+							<img src="../image/mallProdut_202207201151026720.png">
+							<span style="display: block;">(파우치) 아메리카노</span>
+						</li>
+					</ul>
+				</div>
+				<div class="sectionRow1Side">
+					<img src="../image/store_tit.gif">
+					<img src="../image/store_main_pc.jpg">
+				</div>
+			</div>
+			<div class="sectionRow2">
+				<div class="sectionRow2one">
+					<img src="../image/img_banner_membership_210223.jpg">
+				</div>
+				<div class="sectionRow2two">
+					<img src="../image/img_2102223.jpg">
+				</div>
+			</div>
+			<div class="sectionRow3">
+				<ul>
+					<li>
+						<img src="../image/academy_tit.gif">
+					</li>
+					<li>할리스 아카데미와 함께하는 즐거운 커피 여행!</li>
+					<li>
+						<img src="../image/ico_arrow.gif">
+						바로가기
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<img src="../image/b2b_tit.gif">
+					</li>
+					<li>할리스 F&B는 20년의 커피 노하우를 기반으로 한 할리스 B2B 솔루션을 소개합니다</li>
+					<li>
+						<img src="../image/ico_arrow.gif">
+						바로가기
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<img src="../image/news_tit.gif">
+						<img src="../image/ico_arrow.gif">
+					</li>
+					<li>
+						<span>
+							제3자 배정 유상증자 신주발...
+						</span>
+						<span>05-03
+						</span>
+					</li>
+					<li>
+						<span>
+							개인정보처리방침 변경 안내
+						</span>
+						<span>10-06
+						</span>
+					</li>
+					<li>
+						<span>
+							중간배당 기준일 공고
+						</span>
+						<span>10-14
+						</span>
+					</li>
+				</ul>
+				<ul class="sectionRow3Icon">
+					<li>
+						<span style="padding: 10px 14px 10px;margin-bottom: 5px; display: block; text-align: center;">
+							<img src="../image/img_etc01.gif">
+						</span>
+						<span style="display: block; text-align: center;">창업안내</span>
+					</li>
+					<li>
+						<span style="padding: 10px 14px 10px;margin-bottom: 5px; display: block; text-align: center;">
+							<img src="../image/img_etc02.gif">
+						</span>
+						<span style="display: block; text-align: center;">아카데미 강좌</span>
+					</li>
+					<li>
+						<span style="padding: 10px 14px 10px;margin-bottom: 5px; display: block; text-align: center;">
+							<img src="../image/img_etc03.gif">
+						</span>
+						<span style="display: block; text-align: center;">고객문의</span>
+					</li>
+				</ul>
+			</div>
+			<div class="sectionRow4">
+				<ul class="sectionRow4Link">
+					<li>
+						<img src="../image/sns_tit.gif">
+					</li>
+					<li>
+						<img src="../image/sns_facebook.gif">
+					</li>
+					<li>
+						<img src="../image/sns_instagram.gif">
+					</li>
+					<li>
+						<img src="../image/sns_blog.gif">
+					</li>
+				</ul>
+			</div>
+		</section>
+		<footer>
+			<div class="wrap2">
+				<ul class="footerList1">
+					<li>개인정보처리방침</li>
+					<li>서비스이용약관</li>
+					<li>멤버십이용약관</li>
+					<li>할리스카드이용약관</li>
+					<li>고객문의</li>
+					<li>고객설문</li>
+					<li>사이트맵</li>
+					<li>BI 소개</li>
+				</ul>
+				<p>
+					법인명: (주) 케이지할리스에프앤비 대표자: 이종현 사업자등록번호 211-87-61044 통신판매업: 제2019-서울종로-0193호
+					<br>
+					주소 : 서울특별시 종로구 율곡로 88 삼환빌딩 8층 (운니동) 대표전화 : 02-2188-7100 (가맹문의 : 02-6350-7229)
+					<br>
+					COPYRIGHT (C) KG HOLLYS F&B. All Rights Reserved.
+				</p>
+			</div>
+		</footer>
+	</body>
+	</html>

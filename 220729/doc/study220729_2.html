@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function dom(){
+			var one = document.getElementById("one");
+			var two = document.getElementsByClassName("two");
+			var oneTwo = document.querySelector("#one > div:last-child");
+
+			one.style.color = "blue";
+			for (var i = 0; i < two.length; i++) {
+				two[i].style.color = "green";
+			}
+			oneTwo.style.color = "red";
+
+			// var a = document.getElementsByName("nameValue");
+			// var b = document.getElementById("");
+			// var c = document.getElementsByClassName("");
+			// var d = document.getElementsByTagName("");
+			// document.querySelector();
+			// document.querySelectorAll();
+		}
+	</script>
+</head>
+<body>
+	<div id="one">
+		<div>
+			html
+		</div>
+		<div>
+			html2
+		</div>
+	</div>
+	<div class="two">css</div>
+	<div class="two">javascript</div>
+	<input type="button" name="button1" value="click" onclick="dom()">
+</body>
+</html>
