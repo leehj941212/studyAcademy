@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		table{
+			width: 500px;
+			border: double red 5px;
+		}
+	</style>
+</head>
+<script type="text/javascript">
+	function createAddRow(){
+		var name = document.createElement("input");
+		name.setAttribute("type","text");
+		name.value = "html";
+		name.id = "name"
+
+		var age = document.createElement("input");
+		age.setAttribute("type","text");
+		age.value = "10";
+		age.id = "age"
+
+		var del = document.createElement("input");
+		del.setAttribute("type","button");
+		del.value = "삭제";
+		del.id = "del"
+
+		del.setAttribute("onclick","removeTbl(this)");
+		var taList = document.getElementById("tableList");
+
+		alert("현재 행 길이 : " + taList.rows.length);
+
+		var row = taList.insertRow(taList.rows.length);
+		var td1 = row.insertCell(0);
+		var td2 = row.insertCell(1);
+		var td3 = row.insertCell(2);
+
+		td1.appendChild(name);
+		td2.appendChild(age);
+		td3.appendChild(del);
+	}
+
+	function removeTbl(obj){
+		var td = obj.parentNode;
+		var tr = td.parentNode;
+		var table = tr.parentNode;
+		table.removeChild(tr);
+	}
+</script>
+<body>
+	<form name="f">
+		<input type="button" value="행추가" onclick="createAddRow()" />
+		<br/><br/>
+		<table id="tableList">
+			<tr bgcolor="pink">
+				<th>이름</th>
+				<th>나이</th>
+				<th>삭제</th>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

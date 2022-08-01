@@ -3,11 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>JOIN</title>
-	<style type="text/css"></style>
+	<style type="text/css">
+		.inputError{
+			display: none;
+		}
+	</style>
 	<script type="text/javascript">
-
-		// document.querySelectorAll();
-
+		var inputs = document.getElementsByClassName("inputValue");
+		var errors = document.getElementsByClassName("inputError");
+		var signUpValue = ["아이디" , "비밀번호" , "비밀번호 확인" , "이름" , "닉네임" , "이메일" , "연락처" , "주소" , "상세주소" ];
+		var lengthMin = [6,0,0,0,0,0,0,0,0];
+		var lengthMax = [12,100,100,100,6,100,100,100,100];
 		function naverSignup(){
 			location.href="https://www.naver.com";
 		}
@@ -28,119 +34,86 @@
 			}
 		}
 
-		function idCheck(idValue){
-			if (!isBlank(idValue)) {
-				alert("아이디를 입력하세요");
-				return false;
-			} else if (!lengthCheck(idValue,6,12)) {
-				alert("아이디는 6~12자로 입력하세요");
-				return false;
-			} 
-			// else if () {
-			// 	alert("영문,숫자 조합으로 입력하세요");
-			// }
-			else{
-				return true;
+		function inputCheck(value1){
+			for (var i = 0; i < inputs.length; i++) {
+				if (value1 == inputs[i]) {
+					if (inputs[i].value.length == 0) {
+						errors[i].innerHTML = signUpValue+" 값을 입력하세요";
+						errors[i].style.display = "block";
+						return false;
+					}else if (!lengthCheck(inputs[i].value,lengthMin[i],lengthMax[i])) {
+						errors[i].innerHTML = signUpValue+"값은 " + lengthMin[i] + "~" +lengthMax[i] +"자로 입력하세요";
+						errors[i].style.display = "block";
+						return false;
+					} else{
+						errors[i].innerHTML = "";
+						errors[i].style.display = "none";
+						return true;
+					}
+				}
 			}
 		}
 
 		function overlapCheck(){
-			var idValue = document.getElementsByName("idInput")[0].value;
-			if (idCheck(idValue)) {
+			if (idCheck(inputs[0].value)) {
 				alert("사용가능 합니다");
 			}
 		}
 
-		function passwordCheck(){
-			var password1 = joinform.pw.value;
-			if (!isBlank(password1)) {
-				alert("비밀번호를 입력하세요");
+		function password2Check(value1){
+			if (!inputCheck(value1)) {
 				return false;
-			}else{
-				return true;
-			}
-		}
-
-		function password2Check(){
-			var password1 = joinform.pw.value;
-			var password2 = joinform.pwre.value;
-			if ((password1.length != 0) && (!isBlank(password2))) {
-				alert("비밀번호 확인을 입력하세요");
-				return false;
-			}
-			else if (password1 != password2) {
-				alert("비밀번호가 다릅니다");
+			}else if (inputs[1].value != inputs[2].value) {
+				errors[2].innerHTML = "비밀번호가 다릅니다";
+				errors[2].style.display = "block";
 				return false;
 			}else {
-				return true;
-			}
-		}
-
-		function nameCheck(){
-			var nameValue = document.getElementsByTagName("input")[3].value;
-			if (!isBlank(nameValue)) {
-				alert("이름를 입력하세요");
-				return false;
-			}else{
-				return true;
-			}
-		}
-
-		function nicknameCheck(){
-			var nicknameValue = document.getElementsByTagName("input")[4].value;
-			if (!isBlank(nicknameValue)) {
-				alert("닉네임을 입력하세요");
-				return false;
-			}else if (!lengthCheck(nicknameValue,0,6)) {
-				alert("글자수를 확인하세요");
-				return false;
-			}else{
-				return true;
-			}
-		}
-
-		function emailCheck(){
-			var emailValue = document.getElementsByTagName("input")[5].value;
-			if(!isBlank(nicknameValue)) {
-				alert("이메일을 입력하세요");
-				return false;
-			}else{
+				errors[2].innerHTML = "";
+				errors[2].style.display = "none";
 				return true;
 			}
 		}
 
 		function telCheck(){
-			var telValue = joinform.tel.value
-			if (!isBlank(telValue)) {
-				alert("연락처를 입력하세요");
+			if (!isBlank(inputs[6].value)) {
+				errors[6].innerHTML = "연락처를 입력하세요";
+				errors[6].style.display = "block";
 				return false;
-			}else if (!isFinite(telValue)) {
-				alert("숫자만 입력하세요");
+			}else if (!isFinite(inputs[6].value)) {
+				errors[6].innerHTML = "숫자만 입력하세요";
+				errors[6].style.display = "block";
 				return false;
-			}else if (!lengthCheck(telValue,11,11)) {
-				alert("11자리로 입력하세요");
+			}else if (!lengthCheck(inputs[6].value,11,11)) {
+				errors[6].innerHTML = "11자리로 입력하세요";
+				errors[6].style.display = "block";
 				return false;
 			}else{
+				errors[6].innerHTML = "";
+				errors[6].style.display = "none";
 				return true;
 			}
 		}
 
 		function addressMainCheck(){
-			var addressMainValue = document.getElementsByTagName("input")[8].value;
-			if (!isBlank(addressMainValue)) {
-				alert("주소를 입력하세요");
+			if (!isBlank(inputs[7].value)) {
+				errors[7].innerHTML = "주소를 입력하세요";
+				errors[7].style.display = "block";
 				return false;
 			}else{
+				errors[7].innerHTML = "";
+				errors[7].style.display = "none";
 				return true;
 			}
 		}
 
 		function addressSubCheck(){
-			var addressSubValue = document.getElementsByTagName("input")[9].value;
-			if (!isBlank(addressSubValue)) {
-				alert("상세주소를 입력하세요");
+			if (!isBlank(inputs[8].value)) {
+				errors[8].innerHTML = "상세주소를 입력하세요";
+				errors[8].style.display = "block";
 				return false;
 			}else{
+				errors[8].innerHTML = "";
+				errors[8].style.display = "none";
 				return true;
 			}
 		}
@@ -172,33 +145,25 @@
 		}
 
 		function signUpResult(){
-			var inputValue = document.getElementsByTagName("input");
-			for (var i = 0; i < inputValue.length; i++) {
+			for (var i = 0; i < errors.length; i++) {
+				if (errors[i].outerText != "") {
+					alert(errors[i].outerText);
+					return false;
+				}
 			}
 
-
-
-			// for (var i = 0; i < signUpInput.length; i++) {
-			// 	if (signUpInput[i].value.length == 0) {
-			// 		signUpInput[i].focus();
-			// 		alert("값을 입력하세요");
-			// 		return false;
-			// 	}
-
-			// }
-
-			alert("아이디 : " + joinform.idInput.value + "\n" +
-				"비밀번호 : " + joinform.pw.value + "\n" +
-				"이름 : " + joinform.nameValue.value + "\n" +
-				"닉네임 : " + joinform.nickname.value + "\n" +
+			alert("아이디 : " + inputs[0].value + "\n" +
+				"비밀번호 : " + inputs[1].value + "\n" +
+				"이름 : " + inputs[3].value + "\n" +
+				"닉네임 : " + inputs[4].value + "\n" +
 				"생년월일 : " + joinform.select2.value + "년 "+ 
 				joinform.select3.value + "월 "+ 
 				joinform.select4.value + "일 "+"\n" +
-				"이메일 : " + joinform.email.value + "@" + 
+				"이메일 : " + inputs[5].value + "@" + 
 				joinform.select5.value +"\n" +
-				"휴대폰 : " + joinform.tel.value + "\n" +
-				"주소 : " + joinform.addressMain.value + "  " +
-				joinform.addressSub.value);
+				"휴대폰 : " + inputs[6].value + "\n" +
+				"주소 : " + inputs[7].value + "  " +
+				inputs[8].value);
 			return true;
 		}
 
@@ -225,54 +190,111 @@
 				</tr>
 
 				<tr>
-					<td>아이디 *
+					<td>
+						<div class="inputLable">
+							아이디 *
+						</div> 
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="idInput" maxlength="12" size="25" placeholder=" 6~12자 영문, 숫자 조합" onblur="idCheck(this.value)">
+						<input type="text" name="idInput" class="inputValue" maxlength="12" size="25" placeholder=" 6~12자" onblur="inputCheck(this)">
 						&nbsp;
 						<button name="idsearch" type="button" onclick="overlapCheck()">중복확인</button>
 					</td>
 				</tr>
-
 				<tr>
-					<td>비밀번호 *
+					<td>
 					</td>
 					<td>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="password" name="pw" maxlength="16" size="25" onblur="passwordCheck()">
+						<div class="inputError">아이디를 입력하세요</div>
 					</td>
 				</tr>
 
 				<tr>
-					<td>비밀번호 확인 *
+					<td>
+						<div class="inputLable">
+							비밀번호 *
+						</div>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="password" name="pwre" maxlength="16" size="25" onblur="password2Check()">
+						<input type="password" name="pw" class="inputValue" maxlength="16" size="25" onblur="inputCheck(this)">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<div class="inputError">비밀번호를 입력하세요</div>
 					</td>
 				</tr>
 
 				<tr>
-					<td>이름 *
+					<td>
+						<div class="inputLable">
+							비밀번호 확인 *
+						</div>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="nameValue" maxlength="10" size="25" onblur="nameCheck()"> 
+						<input type="password" name="pwre" class="inputValue" maxlength="16" size="25" onblur="inputCheck(this)">
 					</td>
 				</tr>
 				<tr>
-					<td>닉네임 *
+					<td>
+					</td>
+					<td>
+						<div class="inputError">비밀번호 확인을 입력하세요</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="inputLable">
+							이름 *
+						</div>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="nickname" maxlength="6" size="25" placeholder=" 6자 이하" onblur="nicknameCheck()">
+						<input type="text" name="nameValue" class="inputValue" maxlength="10" size="25" onblur="inputCheck(this)"> 
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+					</td>
+					<td>
+						<div class="inputError">이름을 입력하세요</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="inputLable">
+							닉네임 *
+						</div>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="nickname" class="inputValue" maxlength="6" size="25" placeholder=" 6자 이하" onblur="inputCheck(this)">
 						&nbsp;
 						<!-- <button name="nicksearch" type="button">중복확인</button>  -->
 					</td>
 				</tr>
+
 				<tr>
-					<td>생년월일 *
+					<td>
+					</td>
+					<td>
+						<div class="inputError">닉네임을 입력하세요</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="inputLable">
+							생년월일 *
+						</div>
 					</td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<select name="select2">
@@ -332,12 +354,16 @@
 						</select>&nbsp;일
 					</td>
 				</tr>
+
 				<tr>
-					<td>이메일 *
+					<td>
+						<div class="inputLable">
+							이메일 *
+						</div>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="email" maxlength="20" size="25" onblur="emailCheck()"> @ 
+						<input type="text" name="email" class="inputValue" maxlength="20" size="25" onblur="inputCheck(this)"> @ 
 						<select name="select5">
 							<option>naver.com</option>
 							<option>hanmail.com</option>
@@ -350,35 +376,84 @@
 				</tr>
 
 				<tr>
-					<td>휴대폰 *
+					<td>
 					</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="tel" size="25" placeholder=" '-' 제외 숫자만 입력" onblur="telCheck()">
+					<td>
+						<div class="inputError">이메일을 입력하세요</div>
 					</td>
 				</tr>
 
 				<tr>
-					<td>주소 *
+					<td>
+						<div class="inputLable">
+							휴대폰 *
+						</div>
+					</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="tel" class="inputValue" size="25" placeholder=" '-' 제외 숫자만 입력" onblur="inputCheck(this)">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+					</td>
+					<td>
+						<div class="inputError">연락처를 입력하세요</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="inputLable">
+							주소 *
+						</div>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="text" name="findAddress" size="8">
 						<button name="address" type="button">주소검색</button>
-						<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="addressMain" size="40"
-						onblur="addressMainCheck()">
-						<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" name="addressSub" size="40" placeholder=" 상세주소(동,호수 등)" onblur="addressSubCheck()">
 					</td>
 				</tr>
+
+				<tr>
+					<td>
+					</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="addressMain" class="inputValue" size="40"
+						onblur="inputCheck(this)">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+					</td>
+					<td>
+						<div class="inputError">주소를 입력하세요</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+					</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="addressSub" class="inputValue" size="40" placeholder=" 상세주소(동,호수 등)" onblur="inputCheck(this)">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+					</td>
+					<td>
+						<div class="inputError">상세주소를 입력하세요</div>
+					</td>
+				</tr>
+
 				<tr>
 					<td> &nbsp;
 					</td>
 					<td>
 						<input type="checkbox" name="agree" value="동의" onchange="allAgree()"> 전체 동의<br><br>
-						<input type="checkbox" name="agree1" value="동의"> 개인정보 수집 및 이용안내<br>
+						<input type="checkbox" name="agree1" value="동의" onchange="allAgreeCheck()"> 개인정보 수집 및 이용안내<br>
 						<input type="checkbox" name="agree2" value="동의" onchange="allAgreeCheck()"> 마케팅 수신 동의<br>
 						<input type="checkbox" name="agree3" value="동의" onchange="allAgreeCheck()"> 이메일<br>
 						<input type="checkbox" name="agree4" value="동의" onchange="allAgreeCheck()"> SNS<br>

@@ -1,0 +1,100 @@
+<!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Untitled Document</title>
+        <link href="gnb.css" type="text/css" rel="stylesheet">
+    </head>
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.gnbbox').hide();
+            $('.level2').hide();
+            $('.level1').mouseover(function(){
+                $('.gnbbox').fadeIn('fast');
+                $('.level2').fadeIn('fast');
+            });
+            $('.level1').mouseout(function(){
+                $('.gnbbox').hide();
+                $('.level2').hide();
+            });
+        });
+    </script>
+
+    <body>
+        <p class="gnbbox"></p>
+        <div id="wrap">    
+            <div id="header">
+                <h1><img src="img/logo_star.png"></h1>
+                <ul class="top">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">단체 및 기업 구매</a></li>
+                </ul>
+                <ul class="gnb">
+                 <li class="level1"><a href="#">COFFEE</a>
+                    <ul class="level2">
+                        <li class="level2_icon">아이콘1</li>
+                        <li class="level2_title">커피 이야기</li>
+                        <li><a href="#">로스트 스팩트럼</a></li>
+                        <li><a href="#">최상의 아라비카 원두</a></li>
+                        <li><a href="#">커피추출 시스템</a></li>
+                        <li><a href="#">금주의 커피</a></li>
+                    </ul>
+                </li>
+                <li class="level1"><a href="#">MENU</a>
+                    <ul class="level2">
+                        <li class="level2_icon">아이콘2</li>
+                        <li class="level2_title">음료 &amp; 푸드</li>
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">푸드</a></li>
+                        <li><a href="#">크리스마스 케익</a></li>
+                    </ul>
+                </li>
+                <li class="level1"><a href="#">COFFEE HOUSE</a>
+                    <ul class="level2">
+                        <li class="level2_icon">아이콘3</li>
+                        <li class="level2_title">SNS &amp; 제휴카드</li>
+                        <li><a href="#">소셜 스타벅스</a></li>
+                        <li><a href="#">스타벅스 즐기기</a></li>
+                        <li><a href="#">제휴카드</a></li>
+                    </ul>
+                </li>
+                <li class="level1"><a href="#">CARD</a>
+                    <ul class="level2">
+                        <li class="level2_icon">아이콘4</li>
+                        <li class="level2_title">등록 충전 리워드</li>
+                        <li><a href="#">스타벅스 카드</a></li>
+                        <li><a href="#">스타벅스 카드 e-Gift</a></li>
+                        <li><a href="#">스타벅스 카드 관리</a></li>
+                        <li><a href="#">마이 스타벅스 리워드</a></li>
+                    </ul>
+                </li>
+                <li class="level1"><a href="#">WHAT'S NEW</a>
+                    <ul class="level2">
+                        <li class="level2_icon">아이콘5</li>
+                        <li class="level2_title">프로모션 &amp; 새소식</li>
+                        <li><a href="#">프로모션</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">e-프리퀀시</a></li>
+                        <li><a href="#">공지사항</a></li>
+                    </ul>
+                </li>
+                <li class="level1"><a href="#">RESPONSIBILITY</a>
+                    <ul class="level2">
+                        <li class="level2_icon">아이콘6</li>
+                        <li class="level2_title">사회공헌 활동</li>
+                        <li><a href="#">캠패인 소개</a></li>
+                        <li><a href="#">윤리적 원두구매</a></li>
+                    </ul>
+                </li>
+            </ul> 
+
+        </div>  
+    </div>  
+</body>
+</html>

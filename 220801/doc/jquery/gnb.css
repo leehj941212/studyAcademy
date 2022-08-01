@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0}
+body {font-size:1em;background-image:url(img/bg_star2.png); 
+  background-repeat:repeat-x}
+ul {list-style:none}
+a {text-decoration:none; display:block;}
+.gnbbox { width:100%; height:200px; background:#CFAE78; 
+  position:absolute; left:0; top:110px; }
+#wrap {width:990px; margin:0 auto}
+
+#header {height:110px; }
+#header h1{float:left; margin-top:7px}
+#header ul.top { float:right; margin-top:10px}
+ul.top li{float:left; margin-left:20px; font-size:0.7em}
+ul.top li a{color:#FFF}
+ul.top li a:hover{text-decoration:underline}
+
+#header ul.gnb {float:left; margin-top:47px;}
+ul.gnb li.level1{ float:left; width:140px; height:40px; 
+  text-align:center; position:relative;}
+ul.gnb li a {color:#FFF; }
+ul.gnb li > ul.level2 {position:absolute; left:0px; top:40px;
+  width:140px; height:200px; display:block; 
+  border-left:1px solid rgba(255,255,255,0.2);}
+ul.level2 li {line-height:2; font-size:0.8em }  
+ul.level2 li a{color:#c8231f; text-align:left; padding-left:10px;  }
+ul.level2 li a:hover{ background:#007042; color:#FFF}
+li.level2_icon { height:40px;  border-bottom:1px solid rgba(255,255,255,0.2)}
+li.level2_title {color:#007042; font-weight:bold}
