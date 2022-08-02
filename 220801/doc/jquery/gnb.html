@@ -12,15 +12,12 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.gnbbox').hide();
-            $('.level2').hide();
-            $('.level1').mouseover(function(){
-                $('.gnbbox').fadeIn('fast');
-                $('.level2').fadeIn('fast');
+            $('.level2 , .gnbbox').hide();
+            $('.gnb').mouseenter(function(){
+                $('.level2 , .gnbbox').stop().slideDown(200);
             });
-            $('.level1').mouseout(function(){
-                $('.gnbbox').hide();
-                $('.level2').hide();
+            $('.gnb').mouseleave(function(){
+                $('.level2 , .gnbbox').stop().slideUp(200);
             });
         });
     </script>
